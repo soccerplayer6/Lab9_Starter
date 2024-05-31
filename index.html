@@ -102,6 +102,15 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    let cLog = errorBtns[0];
+    cLog.addEventListener('click', event => {
+      console.log("test");
+    });
+
+    let cError = errorBtns[1];
+    cError.addEventListener('click', event => {
+      console.error("not an error!");
+    });
   </script>
 </body>
 
