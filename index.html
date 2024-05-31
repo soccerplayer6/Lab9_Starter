@@ -122,6 +122,13 @@
         console.warn("Warning check");
     });
 
+    let cAssert = errorBtns[4];
+    cAssert.addEventListener('click', event => {
+      let x = 1;
+      let y = 2;
+      console.assert(x === y,"x is not = to y");
+    });
+
     
   </script>
 </body>
