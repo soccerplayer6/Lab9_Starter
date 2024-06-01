@@ -89,6 +89,12 @@
 
   <script>
 
+function badCode()
+{
+  alert('Good code running when suddenly...');
+  abooM('bad code!'); /* BAD CODE ON PURPOSE */ 
+}
+
 class NumberError extends Error {
   constructor(message) {
     super(message); // (1)
@@ -201,6 +207,17 @@ class NumberError extends Error {
     cTrace.addEventListener('click', event => {
       console.trace();
     });
+
+    let cGlobalError = errorBtns[14];
+    cGlobalError.addEventListener('click', event => {
+      try {
+        badCode();
+      }catch (error) {
+        console.log("error caught");
+      }
+    });
+
+
   </script>
 </body>
 
