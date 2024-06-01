@@ -88,6 +88,14 @@
   </main>
 
   <script>
+
+class NumberError extends Error {
+  constructor(message) {
+    super(message); // (1)
+    this.name = "NumberError"; // (2)
+  }
+}
+
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -95,8 +103,13 @@
       let firstNum = document.querySelector('#first-num').value;
       let secondNum = document.querySelector('#second-num').value;
       let operator = document.querySelector('#operator').value;
+
       try {
         var result = eval(`${firstNum} ${operator} ${secondNum}`);
+        if (secondNum === 0 && operator === "/");
+        {
+          throw new NumberError("Dividing by 0");
+        }
       }catch (error) {
         console.error('An error occurred:', error.message);
       }finally {
