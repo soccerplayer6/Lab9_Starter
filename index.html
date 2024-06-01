@@ -167,7 +167,15 @@
       console.table(people);
     });
 
-    
+    let cStimer = errorBtns[11];
+    cStimer.addEventListener('click', event => {
+      console.time('timer');
+    });
+
+    let cEtimer = errorBtns[12];
+    cEtimer.addEventListener('click', event => {
+      console.timeEnd('timer');
+    });
 
   </script>
 </body>
